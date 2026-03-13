@@ -2,7 +2,7 @@ import os
 
 DB_FILE = "data.db"
 
-# Our in-memory index (list instead of dictionary)
+
 store = []
 
 
@@ -30,7 +30,7 @@ def get_value(key):
     index = find_key(key)
 
     if index == -1:
-        print("NULL")
+        print("")
     else:
         print(store[index][1])
 
