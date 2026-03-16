@@ -5,14 +5,14 @@ DB_FILE = "data.db"
 
 store = []
 
-
+#Finds the key in the database
 def find_key(key):
     for i in range(len(store)):
         if store[i][0] == key:
             return i
     return -1
 
-
+#Sets a value for whereever the key is found in the database
 def set_value(key, value):
     index = find_key(key)
 
@@ -25,7 +25,7 @@ def set_value(key, value):
     with open(DB_FILE, "a") as f:
         f.write(f"SET {key} {value}\n")
 
-
+#Gets a value from database using the key
 def get_value(key):
     index = find_key(key)
 
@@ -34,7 +34,7 @@ def get_value(key):
     else:
         print(store[index][1])
 
-
+#loads the database
 def load_database():
     if not os.path.exists(DB_FILE):
         return
